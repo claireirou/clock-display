@@ -17,6 +17,7 @@ public class ClockDisplay
     private NumberDisplay hours;
     private NumberDisplay minutes;
     private String displayString;    // simulates the actual display
+    private boolean meridian;        // keeps track of AM or PM
     
     /**
      * Constructor for ClockDisplay objects. This constructor 
@@ -26,6 +27,7 @@ public class ClockDisplay
     {
         hours = new NumberDisplay(24);
         minutes = new NumberDisplay(60);
+        meridian = true;
         updateDisplay();
     }
 
@@ -38,6 +40,17 @@ public class ClockDisplay
     {
         hours = new NumberDisplay(24);
         minutes = new NumberDisplay(60);
+        
+        /**
+         * condition statement to determine AM or PM
+         * if hour parameter is 12 or greater meridian field is false (pm).
+         */
+        if(hour > 11) {
+            meridian = false;
+        }else{
+            meridian = true;
+        }
+        
         setTime(hour, minute);
     }
 
