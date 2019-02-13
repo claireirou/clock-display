@@ -53,8 +53,8 @@ public class ClockDisplay12Hr
         minutes.increment();
         if(minutes.getValue() == 0) {  // it just rolled over!
             hours.increment();
-            if(hours.getValue() == 0) {
-                meridian = !meridian;
+            if(hours.getValue() == 0) { // hours rolled over
+                meridian = !meridian; 
             }
         }
         updateDisplay();
@@ -85,7 +85,34 @@ public class ClockDisplay12Hr
      */
     private void updateDisplay()
     {
-        displayString = hours.getDisplayValue() + ":" +
-                        minutes.getDisplayValue() + meridian;
+        /**
+         * Conditional statement to test whether it's AM or PM 
+         * and to print out accordingly.
+         */
+        if(meridian == true) {
+            /**
+             * Conditional statement to test if hour is 0.
+             * If it is, prints out 12 instead followed by
+             * minutes and meridian value.
+             */
+            if(hours.getValue() == 0) {
+                displayString = 12 + ":" +
+                        minutes.getDisplayValue() + "AM";
+            }else{
+                displayString = hours.getDisplayValue() + ":" +
+                        minutes.getDisplayValue() + "AM";
+            }
+            
+        }else{
+            
+            if(hours.getValue() == 0) {
+                displayString = 12 + ":" +
+                        minutes.getDisplayValue() + "PM";
+            }else{
+                displayString = hours.getDisplayValue() + ":" +
+                        minutes.getDisplayValue() + "PM";
+            }
+            
+        }
     }
 }
