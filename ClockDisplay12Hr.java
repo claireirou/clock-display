@@ -17,7 +17,7 @@ public class ClockDisplay12Hr
     private NumberDisplay hours;
     private NumberDisplay minutes;
     private String displayString;    // simulates the actual display
-    private boolean meridian;        // determines am (true) or pm (false)
+    private boolean meridian;        // determines am (true) or pm (false) 
 
     /**
      * Constructor for ClockDisplay objects. This constructor
