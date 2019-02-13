@@ -17,7 +17,7 @@ public class ClockDisplay12Hr
     private NumberDisplay hours;
     private NumberDisplay minutes;
     private String displayString;    // simulates the actual display
-    private String meridian;
+    private boolean meridian;        // determines am (true) or pm (false)
 
     /**
      * Constructor for ClockDisplay objects. This constructor
@@ -27,7 +27,7 @@ public class ClockDisplay12Hr
     {
         hours = new NumberDisplay(12);
         minutes = new NumberDisplay(60);
-        meridian = "AM";
+        meridian = true;
         updateDisplay();
     }
 
@@ -36,12 +36,12 @@ public class ClockDisplay12Hr
      * creates a new clock set at the time specified by the
      * parameters.
      */
-    public ClockDisplay12Hr(int hour, int minute, String AMorPM)
+    public ClockDisplay12Hr(int hour, int minute, boolean AM)
     {
         hours = new NumberDisplay(12);
         minutes = new NumberDisplay(60);
-        meridian = AMorPM;
-        setTime(hour, minute, AMorPM);
+        meridian = AM;
+        setTime(hour, minute, AM);
     }
 
     /**
@@ -52,12 +52,10 @@ public class ClockDisplay12Hr
     {
         minutes.increment();
         if(minutes.getValue() == 0) {  // it just rolled over!
-            
-           if(hours.getValue() != 11){
             hours.increment();
-            }else{
-            hours.setValue(12);
-           }
+            if(hours.getValue() == 0) {
+                meridian = !meridian;
+            }
         }
         updateDisplay();
     }
@@ -66,11 +64,11 @@ public class ClockDisplay12Hr
      * Set the time of the display to the specified hour and
      * minute.
      */
-    public void setTime(int hour, int minute, String AMorPM)
+    public void setTime(int hour, int minute, boolean AM)
     {
         hours.setValue(hour);
         minutes.setValue(minute);
-        meridian = AMorPM;
+        meridian = AM;
         updateDisplay();
     }
 
