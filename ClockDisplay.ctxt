@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=ClockDisplay
-comment0.text=\r\n\ The\ ClockDisplay\ class\ implements\ a\ digital\ clock\ display\ for\ a\r\n\ European-style\ 24\ hour\ clock.\ The\ clock\ shows\ hours\ and\ minutes.\ The\ \r\n\ range\ of\ the\ clock\ is\ 00\:00\ (midnight)\ to\ 23\:59\ (one\ minute\ before\ \r\n\ midnight).\r\n\ \r\n\ The\ clock\ display\ receives\ "ticks"\ (via\ the\ timeTick\ method)\ every\ minute\r\n\ and\ reacts\ by\ incrementing\ the\ display.\ This\ is\ done\ in\ the\ usual\ clock\r\n\ fashion\:\ the\ hour\ increments\ when\ the\ minutes\ roll\ over\ to\ zero.\r\n\ \r\n\ @author\ Michael\ K\u00F6lling\ and\ David\ J.\ Barnes\r\n\ @version\ 2016.02.29\r\n
+comment0.text=\r\n\ The\ ClockDisplay\ class\ implements\ a\ digital\ clock\ display\ for\ a\r\n\ European-style\ 24\ hour\ clock.\ The\ clock\ shows\ hours\ and\ minutes.\ The\ \r\n\ range\ of\ the\ clock\ is\ 00\:00\ (midnight)\ to\ 23\:59\ (one\ minute\ before\ \r\n\ midnight).\r\n\ \r\n\ The\ clock\ display\ receives\ "ticks"\ (via\ the\ timeTick\ method)\ every\ minute\r\n\ and\ reacts\ by\ incrementing\ the\ display.\ This\ is\ done\ in\ the\ usual\ clock\r\n\ fashion\:\ the\ hour\ increments\ when\ the\ minutes\ roll\ over\ to\ zero.\r\n\ \r\n\ @author\ Claire\ Iroudayassamy\r\n\ @version\ 2019.02.15\r\n
 comment1.params=
 comment1.target=ClockDisplay()
 comment1.text=\r\n\ Constructor\ for\ ClockDisplay\ objects.\ This\ constructor\ \r\n\ creates\ a\ new\ clock\ set\ at\ 00\:00.\r\n

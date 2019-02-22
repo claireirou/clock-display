@@ -85,34 +85,19 @@ public class ClockDisplay12Hr
      */
     private void updateDisplay()
     {
-        /**
-         * Conditional statement to test whether it's AM or PM 
-         * and to print out accordingly.
-         */
-        if(meridian == true) {
-            /**
-             * Conditional statement to test if hour is 0.
-             * If it is, prints out 12 instead followed by
-             * minutes and meridian value.
-             */
-            if(hours.getValue() == 0) {
+        String suffix = "AM";
+        
+        if(!meridian){
+            suffix = "PM";
+        }
+
+        if(hours.getValue() == 0) {
                 displayString = 12 + ":" +
-                        minutes.getDisplayValue() + "AM";
-            }else{
-                displayString = hours.getDisplayValue() + ":" +
-                        minutes.getDisplayValue() + "AM";
-            }
-            
+                        minutes.getDisplayValue() + suffix;
         }else{
-            
-            if(hours.getValue() == 0) {
-                displayString = 12 + ":" +
-                        minutes.getDisplayValue() + "PM";
-            }else{
                 displayString = hours.getDisplayValue() + ":" +
-                        minutes.getDisplayValue() + "PM";
-            }
-            
+                        minutes.getDisplayValue() + suffix;
         }
     }
 }
+
